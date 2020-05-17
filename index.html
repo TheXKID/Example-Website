@@ -1,0 +1,53 @@
+<style>
+    body {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <h1>
+        My example
+    </h1>
+</body>
+
+<script>
+
+    let name = "John"
+
+    let space = " "
+
+    let linebreak = "\n"
+
+
+    let first_name_boy = "Greg"
+    let last_name_boy = "Doe"
+
+    let first_name_girl = "Jane"
+    let last_name_girl = "Ivy"
+
+    alert(namer_boy() + linebreak + namer_girl())
+    alert("they got married")
+    last_name_change()
+    alert(namer_boy() + linebreak + namer_girl())
+
+
+    console.log("hello")
+
+    function namer_boy() {
+
+        let boy_name = first_name_boy + space + last_name_boy
+
+        return boy_name
+    }
+    function namer_girl() {
+
+        let girl_name = first_name_girl + space + last_name_girl
+
+        return girl_name
+
+    }
+    function last_name_change() {
+
+        last_name_girl = last_name_boy
+    }
+</script>
