@@ -21,6 +21,13 @@
         I was learning about vairables and functions
     </p>    
 
+    <button  onclick="alert_people()" >
+        show people
+    </button>
+    <button onclick="last_name_change()">
+        Now Married
+    </button>
+
 </body>
 
 <script>
@@ -38,14 +45,18 @@
     let first_name_girl = "Jane"
     let last_name_girl = "Ivy"
 
-    alert(namer_boy() + linebreak + namer_girl())
-    alert("they got married")
-    last_name_change()
-    alert(namer_boy() + linebreak + namer_girl())
+    // alert(namer_boy() + linebreak + namer_girl())
+    // alert("they got married")
+    // last_name_change()
+    // alert(namer_boy() + linebreak + namer_girl())
 
 
     console.log("hello")
 
+    function alert_people(){
+
+        alert(namer_boy() + linebreak + namer_girl())
+    }
     function namer_boy() {
 
         let boy_name = first_name_boy + space + last_name_boy
@@ -62,5 +73,6 @@
     function last_name_change() {
 
         last_name_girl = last_name_boy
+        alert("they got married")
     }
 </script>
