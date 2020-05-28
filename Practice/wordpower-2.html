@@ -1,0 +1,43 @@
+
+<body>
+    <h1>
+        Welcome to the most basic website.
+        <br>
+
+
+
+    </h1>
+</body>
+
+<script>
+    let word1 = "desk"
+    let word2 = "chair"
+    let word3 = "window"
+    let word4 = "stool"
+    let word5 = "door"
+    let numberOfWords = 5
+    let br = "<br> <br>"
+
+    document.body.innerHTML += "That" + " " + word1 + " " + "is very pretty." + br
+
+    document.body.innerHTML += "How much does that" + " " + word2 + " " + "cost?" + br
+
+
+    function Space(x = "That cat") {
+        return x + " "
+    }
+
+    document.body.innerHTML += Space(word3)
+    document.body.innerHTML += Space(word1)
+    document.body.innerHTML += Space(word2)
+    document.body.innerHTML += Space(word4)
+    document.body.innerHTML += Space(word5)
+    document.body.innerHTML += Space()
+    document.body.innerHTML += Space()
+
+
+        function addText(x = "Hello im an Error") {
+            document.body.innerHTML += x
+        }
+    
+</script>

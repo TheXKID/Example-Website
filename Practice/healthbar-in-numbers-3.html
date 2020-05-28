@@ -1,0 +1,75 @@
+<html>
+<style>
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<body>
+    <h1>
+        Health bars in numbers
+    </h1>
+    <button onclick="changeHealth(10)">
+        Attack 10hp
+    </button>
+    <button onclick="changeHealth(20)">
+        Attack 20hp
+    </button>
+    <button onclick="changeHealth(40)">
+        Attack 40hp
+    </button>
+    <button onclick="changeHealth(-50)">
+        Heal 50hp
+    </button>
+    <br>
+    <br>
+
+
+</body>
+
+
+<script>
+    function addText(x = "Hello im an Error") {
+        document.body.innerHTML += x + "<br> <br>"
+    }
+
+    // set health, global variable
+    // shared by everyone
+    var Health = 100
+
+    addText("Health Bar: 100")
+    setColor()
+
+    function changeHealth(x = 25) {
+        Health -= x
+
+        addText("Health Bar: " + Health)
+        setColor()
+
+        if (Health < 1) {
+            alert("You Died!")
+        }
+    }
+
+function setColor() {
+    let green = Health
+    let red = 100 - Health
+
+    document.body.style.background = "rgb(" + red + "%," + green +"%, 0%)"
+}
+
+</script>
+
+
+
+
+
+</html>
