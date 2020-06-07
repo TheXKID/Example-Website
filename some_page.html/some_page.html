@@ -1,0 +1,162 @@
+<head>
+    <title>Just some page</title>
+</head>
+<style>
+    body {
+        background-color: deepskyblue;
+    }
+
+    div {
+        background-color: indigo;
+        color: aliceblue;
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        top: 500px;
+        transition: all 5px;
+        left: 500px;
+        border-radius: 6px;
+    }
+
+    .footprint {
+        background-color: lightgoldenrodyellow;
+        width: 65px;
+        height: 65px;
+        position: absolute;
+        border-radius: 4px;
+        animation: animate_start 1s 1;
+        z-index: -2;
+    }
+
+    @keyframes animate_start {
+        0% {
+            opacity: 1;
+            border-radius: 4px;
+
+        }
+    }
+</style>
+
+<body>
+    <div id="myHello">
+        Hi
+    </div>
+</body>
+
+<script>
+
+    async function start() {
+        // // // // // // tell css to move down 700px
+        // // // // // div.style.top = "700px"
+
+        // // // // // // wait for it to finish moving
+        // // // // // await sleep(600)
+
+        // // // // // // tell css to move left to 500px
+        // // // // // div.style.left = "500px"
+
+        // // // // // await sleep(600)
+
+        // let our_random = Math.random()
+        // our_random *= 5
+        // our_random = Math.round(our_random)
+
+        // div.innerText += " " + our_random
+
+        // let a_variable = our_random+75
+        // div.style.top= a_variable+"px"
+    }
+
+    async function start2() {
+        let current_top = 500
+        let cuurent_left = 500
+        let move_top = 0
+        let move_left = 0
+        const w = 75
+        const h = 75
+        await sleep(100)
+
+        for (let i = 0; i < 50; i++) {
+            current_top = await draw_top(current_top, number_0_to_5(), h)
+            cuurent_left = await draw_left(current_left, number_0_to_5(), w)
+        }
+    }
+
+    async function draw_top(current, move, h) {
+        current += move * h * ran_bool()
+        div.style.top = current + "px"
+        await draw_wait(move)
+        console.log(current)
+        return current
+
+    }
+
+    async function draw_left(current, move, w) {
+        current += move * w * ran_bool()
+        div.style.left = current + "px"
+        await draw_wait(move)
+        console.log("left", current)
+        return current
+    }
+
+    async function draw_wait(move) {
+        await sleep(move * 500)
+        div.style.transitionDuration = move / 2 + "s"
+    }
+
+    function number_0_to_5() {
+        let our_random = Math.random()
+        our_random *= 3
+        our_random = Math.round(our_random)
+        return our_random + 1
+    }
+
+    function ran_bool() {
+        let bool = Math.random() >= 0.5
+
+        if (bool) {
+            return -1
+        }
+        else {
+            return 1
+        }
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+</script>
+<script>
+
+    let div = document.getElementById("myHello")
+    start3()
+
+    async function start3() {
+        let current_top = 500
+        let current_left = 500
+        let move_top = 0
+        let move_left = 0
+        const small_w = 65
+        const small_h = 65
+        const w = 75
+        const h = 75
+        const offset_top = (w - small_w) / 2
+        const offset_left = (h - small_h) / 2
+        await sleep(100)
+
+        div.style.transitionDuration = ".2s"
+
+        const number_of_times_to_loop = 10
+
+        for (let i = 0; i < number_of_times_to_loop; i++) {
+            const direction = ran_direction()
+            if (direction === 0) {
+                current_top = await mueve_top(current_top, offset_top, current_left, offset_left, h)
+            }
+            else if (direction === 1) {
+                current_top = await mueve_top(current_top, offset_top, current_left, offset_left, -h)
+            }
+            else if (direction === 2)
+        }
+    }
+</script>
