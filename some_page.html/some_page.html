@@ -126,6 +126,7 @@
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 </script>
+
 <script>
 
     let div = document.getElementById("myHello")
@@ -156,7 +157,44 @@
             else if (direction === 1) {
                 current_top = await mueve_top(current_top, offset_top, current_left, offset_left, -h)
             }
-            else if (direction === 2)
+            else if (direction === 2) {
+                current_left = await mueve_left(current_top, offset_top, cuurent_left, offset_left, w)
+            }
+            else if (direction === 3) {
+                cuurent_left = await mueve_left(current_top, offset_top, current_left, offset_left, -w)
+            }
         }
+
+    }
+
+    function ran_direction() {
+        let our_random = Math.random()
+        our_random *= 3
+        our_random = Math.round(our_random)
+        return our_random
+    }
+
+    async function mueve_top(current_top, offset_top, current_left, offset_left, h) {
+        add_footprint(current_top, offset_top, current_left, offset_left)
+        current_top += h
+        div.style.top = current_top + "px"
+        await sleep(200)
+        return current_top
+    }
+
+    async function mueve_left(current_top, offset_top, current_left, offset_left, w) {
+        add_footprint(current_top, offset_top, current_left, offset_left)
+        current_left += w
+        div.style.left = current_left + "px"
+        await sleep(200)
+        return current_left
+    }
+
+    function add_footprint(current_top, offset_top, current_left, offset_left) {
+        let footprint = document.createElement("div")
+        document.body.appendChild(footprint)
+        footprint.style.top = current_top + offset_top + "px"
+        footprint.style.left = current_left + offset_left + "px"
+        footprint.classList.add("footprint")
     }
 </script>
