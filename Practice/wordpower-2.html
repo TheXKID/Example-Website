@@ -8,13 +8,27 @@
 
     </h1>
 </body>
+<style>
+    span{
+        background-color: lawngreen;
+        margin-left: .5em;
+    }
 
+
+
+
+</style>
 <script>
     let word1 = "desk"
     let word2 = "chair"
     let word3 = "window"
     let word4 = "stool"
     let word5 = "door"
+    let word_list = [
+        "word1",
+        "word2",
+        "wordthree"
+    ]
     let numberOfWords = 5
     let br = "<br> <br>"
 
@@ -24,20 +38,24 @@
 
 
     function Space(x = "That cat") {
-        return x + " "
+        return x + "_"
     }
 
-    document.body.innerHTML += Space(word3)
-    document.body.innerHTML += Space(word1)
-    document.body.innerHTML += Space(word2)
+    addText(Space(word3))
+    addText(Space(word1))
+    addText(Space(word2))
     document.body.innerHTML += Space(word4)
     document.body.innerHTML += Space(word5)
     document.body.innerHTML += Space()
     document.body.innerHTML += Space()
 
 
-        function addText(x = "Hello im an Error") {
-            document.body.innerHTML += x
-        }
+    function addText(x = "Hello im an Error") {
+        document.body.innerHTML += "<span>" + x +"</span>"
+        return x
+    }
+
+
+    addText("<h1>Hola me llamo Nathan</h1>")
     
 </script>
