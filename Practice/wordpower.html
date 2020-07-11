@@ -3,11 +3,61 @@
     <h1>
         Welcome to the most basic website.
         <br>
-
-
-
     </h1>
+
+    <em>
+        Water, <br> phones, PS4, <br> Monitor, ID Badge <br><br>
+    </em>
+    
+    <img src="../Image/pic.png" alt=""> <br> <br>
+
+    <a href="./healthbar-in-numbers-3.html">Web Health</a>
+<br><br>
+    <a href="./404.html">Win $1,000,000</a>
+<br><br>
+    <a href="./wordpower-2.html">New and Improved</a>
+    <br><br>
 </body>
+
+<style>
+    body{
+        background-color: darkgrey;
+        background-image: linear-gradient(45deg,#673AB7,#FFC107);
+        color: white;
+
+
+        text-align: center; 
+        padding-top: 3em;
+    }
+
+    img{
+        width: 20em;
+        border-radius: .5em;
+        animation-name: animate_start;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }
+
+    a{
+        background-color: dodgerblue;
+        text-decoration: none;
+        color: white;
+        padding-top: .2em;
+        padding-left: 2em;
+        padding-bottom: .3em;
+        padding-right: 2em;
+        border-radius: .5em;
+    }
+
+    @keyframes animate_start {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+</style>
 
 <script>
     let word1 = "desk"
