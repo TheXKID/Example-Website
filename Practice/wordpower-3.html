@@ -1,0 +1,50 @@
+<style>
+
+
+
+</style>
+
+
+
+<body>
+    <h1>
+        Best Chicken Restuarant
+    </h1>
+
+    <h2>
+        The Best Chicken Restuarant is
+        <span id="beststore">CFK</span>
+    </h2>
+
+    <label for="store">Choose a Restuarant:</label>
+    <select name="store" id="store">
+        <option value="clm">Cow-la-Moo</option>
+        <option value="chz">Chackyz</option>
+        <option value="bls">Burlys</option>
+        <option value="tdc">The Dead Crane</option>
+    </select>
+
+    <button onclick="submit()">submit</button>
+</body>
+<script>
+
+    function submit() {
+        let select = document.getElementById("store")
+        let store = select.value
+        store = maptext(store)
+
+        let beststore = document.getElementById("beststore")
+        beststore.innerText = store
+    }
+
+    function maptext(pollo = "el mejor pollo") {
+        switch (pollo) {
+            case "clm": return "Cow-la-Moo"
+            case "chz": return "Chackyz"
+            case "bls": return "Burlys"
+            case "tdc": return "The Dead Crane"
+
+            default: return "you forgot to give the funtion a value"
+        }
+    }
+</script>
