@@ -1,0 +1,68 @@
+<style>
+    body {
+        background-color: beige;
+        color: black;
+
+        text-align: center;
+        padding-top: 4em;
+
+    }
+
+    button {
+        /* display: block; */
+
+    }
+</style>
+
+<body>
+    <h1>Money Change to local Currency</h1>
+
+    <input type="number" id="money-have">
+    <br><br>
+    <button onclick="addmoney()">Add Money</button>
+    <br><br>
+    <hr><br>
+    <button onclick="exchange(25)">$25</button>
+    <br><br>
+    <button onclick="exchange(50)">$50</button>
+
+    <h3>
+        USD: <span id="total-usd">100</span>
+    </h3>
+    <h3>
+        MXN: <span id="total-mxn">0</span>
+    </h3>
+</body>
+
+<script>
+    let USD = document.getElementById("total-usd")
+    let MXN = document.getElementById("total-mxn")
+    let addusd = document.getElementById("money-have")
+
+    let wallet = {
+        usd: 100, mxn: 0
+    }
+
+    function add_usd(usd = 0) {
+        wallet.usd += usd
+        USD.innerText = wallet.usd
+    }
+    function add_mxn(mxn = 0) {
+        wallet.mxn += mxn
+        MXN.innerText = wallet.mxn
+    }
+
+    function exchange(usd = 1) {
+        add_usd(-usd)
+        add_mxn(22 * usd)
+
+
+    }
+
+    function addmoney() {
+        let new_money = addusd.value
+        new_money = parseInt(new_money)
+        add_usd(new_money)
+    }
+
+</script>
