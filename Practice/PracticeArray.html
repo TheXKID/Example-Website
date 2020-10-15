@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+let str = "LaunchCode"
+let Lol= str.slice(0,3)
+str =str.slice(3)
+str+=Lol
+console.log(str)
+
+let protoArray1 = "3,6,9,12";
+let protoArray2 = "A;C;M;E";
+let protoArray3 = "space delimited string";
+let protoArray4 = "Comma-spaces, might, require, typing, caution";
+
+strings = [protoArray1, protoArray2, protoArray3, protoArray4];
+
+function howIsStringSplit(str_2 = "") {
+    if(str_2.includes(" ")) 
+        return "This text contains a space"
+    if(str_2.includes(";"))
+        return "This text contains a semi-colon"
+    if(str_2.includes(","))
+        return "This text contains a coma"
+}
+</script>
+
+</html>

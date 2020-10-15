@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="askPersonForAge()">
+        Question for you.
+    </button>
+</body>
+<script>
+    let people = ["Juan", "Nathan", "AMan", "Ben" ]
+    function askPersonForAge() {
+        let name = prompt("Who is Batman?")
+        let Age = getAge(name)
+        alert("Batman age is " + Age)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function getAge(person_name = "") {
+        if(person_name === "") 
+            return "You didn't give us a person!"
+        if(person_name === "Juan")
+            return 26
+        if(person_name === "Nathan")
+            return 22
+        if(person_name === "AMan")
+            return 21
+        if(person_name === "Ben")
+            return 30
+        return "I don't know this persons age!"
+    }
+    console.log("About to get age")
+    console.log(getAge())
+</script>
+</html>
