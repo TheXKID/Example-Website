@@ -1,0 +1,22 @@
+<body></body>
+
+<script>
+    function makeLine(size = 500) {
+        const draw = "#"
+        let result = ""
+        for (let i = 0; i < size; i++) {
+            result += draw
+            
+        }
+        return result
+    }
+    function multilines(size = 50) {
+        let square = ""
+        for (let i = 0; i < size; i++) {
+            square += makeLine(size) + "\n"
+            
+        }
+        return square
+    }
+    console.log(multilines(5))
+</script>
