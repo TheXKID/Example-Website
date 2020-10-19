@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //const input = require('readline-sync');
+        const input = {
+            question: function (question_name = "") {
+                return prompt(question_name)
+            }
+        }
+        const console = {
+            log: function (message) {
+                document.body.innerText += message + "\n"
+            }
+        }
+        let num_answers = 0
+        let questions = [
+            "1) True or false: 5000 meters = 5 kilometers. ",
+            "2) (5 + 3)/2 * 10 = ?",
+            "3) Given the array '[8, Orbit, Trajectory, 45], what entry is index 2?",
+            "4) Who was the first American woman in space?",
+            "5) What is the minimum crew size for the International Space Station (ISS)?"
+        ]
+        let answers = [
+            "True",
+            "40",
+            "Trajectory",
+            "Sally Ride",
+            "3"
+        ]
+        let name = input.question("What is your name? ");
+        console.log("Candidate name: " + name)
+        for (let i = 0; i < questions.length; i++) {
+            let user_guess = input.question(questions[i] + " ")
+            let answer = answers[i]
+            if (user_guess.toLowerCase() === answer.toLowerCase()) {
+                console.log(user_guess + " is correct.")
+                num_answers += 1;
+            } else {
+                console.log(user_guess + ` is incorrect. ${answer} is the correct answer`);
+            }
+        }
+        console.log(num_answers + " is how many you got correct.");
+        console.log(num_answers / questions.length * 100 + "%")
+
+
+    </script>
+
+</body>
+
+</html>
