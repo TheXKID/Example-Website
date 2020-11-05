@@ -1,0 +1,70 @@
+<body>
+    
+</body>
+
+<script>
+    let alpha = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+        f: 6,
+        g: 7,
+        h: 8,
+        i: 9,
+        j: 10,
+    } 
+
+    function build_alpha() {
+        let letters = ["a", "b", "c", "d", "e"]
+        let alphabet = {}
+        for (let index = 0; index < letters.length; index++) {
+            const letter = letters[index];
+            document.body.innerHTML += letter + "<br><br>"
+        }
+    }
+    build_alpha()
+
+    function build_table() {
+        let table = {
+            color: "white",
+            legs: 4,
+        }
+        table.color = "green"
+        table.legs += 2
+        table.discription = `
+            table <br>
+            the color is: ${table.color} <br>
+            it has ${table.legs} legs <br>
+            `
+            
+        return table
+        
+    }
+    let myTable = build_table()
+    document.body.innerHTML += myTable.discription
+
+    function build_car(change_property, some_value) {
+        let car = {
+            color: "blue",
+            doors: 4,
+            seats: 5,
+        }
+        car["color"] = "grey"
+        let some_property = "color"
+        car[some_property] = "red"
+        car[change_property] = some_value
+        return car
+    }
+    let nathanCar = build_car("color", "purple")
+    document.body.innerHTML += `
+        Nathan's car <br>
+        it has ${nathanCar.doors} doors <br>
+        and the color is ${nathanCar.color} <br>
+        and it seats ${nathanCar.seats}.
+        `
+
+
+
+</script>

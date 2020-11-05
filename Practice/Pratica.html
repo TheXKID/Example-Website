@@ -1,0 +1,35 @@
+<body>
+    
+</body>
+
+<script>
+    function set_ten(nada){
+        nada = 10
+        return nada
+    }
+    function add_three(empty) {
+        empty++
+        empty++
+        empty++
+        return empty
+    }
+    function pratice(lolo) {
+        let close_ten = 10 - lolo
+        lolo -= close_ten
+        return lolo
+    }
+
+
+    function set_eight(none) {
+        none = 8
+        return none
+    }
+    let input_number = 16
+    let output_number = pratice(add_three(input_number))//pratice(pratice(pratice(input_number)))    
+
+    document.body.innerHTML += `
+        input: ${input_number} <br> 
+        output: ${output_number} <br>
+        `
+    
+</script>
